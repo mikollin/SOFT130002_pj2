@@ -38,7 +38,7 @@ $result=$con->query($sql);
 $row=$result->fetch_row();
 $uid=$row[0];
 
-$sql="select uid from travelimage where path='$image'";
+$sql="select uid from travelimage where path='$path'";
 $result=$con->query($sql);
 $row=$result->fetch_row();
 $uploader=$row[0];
@@ -103,7 +103,7 @@ $sql="select geocountries.CountryName,geocountries.ISO from geocountries where g
 $result=$con->query($sql);
 $row=$result->fetch_row();
 $countryCode=$row[1];
-$sql="select geocities.AsciiName,geocities.GeoNameID from geocities where geocities.AsciiName='$city'";
+$sql="select geocities.AsciiName,geocities.GeoNameID from geocities where geocities.AsciiName=\"$city\"";
 $result=$con->query($sql);
 $row=$result->fetch_row();
 $cityCode=$row[1];
@@ -112,8 +112,9 @@ $result=$con->query($sql);
 $row=$result->fetch_row();
 $uid=$row[0];
 
+
 if($username!=null&&$title!=null&&$description!=null&&$theme!=null&&$country!=null&&$city!=null&&($uid==$uploader)) {
-    $sql = "UPDATE `travelimage` SET `Title` = '$title', `Description` = '$description',`Content`='$theme',`Country`='$country',`City`='$city',`CountryCodeISO`='$countryCode',`CityCode`='$cityCode' WHERE `travelimage`.`path` = '$path'";
+    $sql = "UPDATE `travelimage` SET `Title` = '$title', `Description` = '$description',`Content`='$theme',`Country`='$country',`City`=\"$city\",`CountryCodeISO`='$countryCode',`CityCode`='$cityCode' WHERE `travelimage`.`path` = '$path'";
 
 //if($username!=null)
     $result = $con->query($sql);

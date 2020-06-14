@@ -28,7 +28,9 @@ $host = 'localhost';
 $port = 3306;
 $serve='localhost:3306';
 $con = new Mysqli($serve,$user,$password,$db);
-$con->query("SET NAMES utf8");//解决中文乱码问题
+$con->query("SET NAMES utf8");//
+
+echo $city;
 
 
 $valid=isset($_FILES['upload_pics']);
@@ -114,12 +116,13 @@ if($username!=null&&$title!=null&&$pic!=null&&$description!=null&&$theme!=null&&
     }
 
 }
+echo 'dodo';
 
 $sql="select geocountries.CountryName,geocountries.ISO from geocountries where geocountries.CountryName='$country'";
 $result=$con->query($sql);
 $row=$result->fetch_row();
 $countryCode=$row[1];
-$sql="select geocities.AsciiName,geocities.GeoNameID from geocities where geocities.AsciiName='$city'";
+$sql="select geocities.AsciiName,geocities.GeoNameID from geocities where geocities.AsciiName=\"$city\"";
 $result=$con->query($sql);
 $row=$result->fetch_row();
 $cityCode=$row[1];
@@ -128,8 +131,10 @@ $result=$con->query($sql);
 $row=$result->fetch_row();
 $uid=$row[0];
 
+
+
 if($username!=null&&$title!=null&&$imgFileName!=null&&$description!=null&&$theme!=null&&$country!=null&&$city!=null) {
-    $sentence = "INSERT INTO `travelimage`(`Title`, `Description`,`Content`,`PATH`,`Country`,`City`,`UserName`,`CountryCodeISO`,`CityCode`,`UID`) VALUES ('$title','$description','$theme','$imgFileName','$country','$city','$username','$countryCode','$cityCode','$uid')";
+    $sentence = "INSERT INTO `travelimage`(`Title`, `Description`,`Content`,`PATH`,`Country`,`City`,`UserName`,`CountryCodeISO`,`CityCode`,`UID`) VALUES ('$title','$description','$theme','$imgFileName','$country',\"$city\",'$username','$countryCode','$cityCode','$uid')";
 
     if (!$con){//如果连接失败
         die('Could not connect: ' . mysqli_error());//输出错误信息并退出脚本

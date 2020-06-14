@@ -621,7 +621,7 @@ else if($_GET['hot_city']!=''){
     $cityCode = $_GET['hot_city'];
 
 
-    $sql="select AsciiName from geocities where GeoNameID=\"$city\" ";
+    $sql="select AsciiName from geocities where GeoNameID='$cityCode' ";
     $result = $con->query($sql);
     $row = $result->fetch_row();
     $city=$row[0];

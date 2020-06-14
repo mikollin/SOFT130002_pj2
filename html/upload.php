@@ -402,7 +402,7 @@ if(isset($_SESSION['username'])):
        let city = document.getElementById('second');
 
        for (let i = 0; i < <?php echo $count; ?>; i++) {
-           if (country.options[i].value == '<?php echo $country; ?>') {
+           if (country.options[i].value == "<?php echo $country; ?>") {
                country.options[i].selected = true;
                break;
            }
@@ -420,7 +420,7 @@ if(isset($_SESSION['username'])):
 
 
            for (let i = 0; i < city.options.length; i++) {
-               if (city.options[i].innerText == '<?php echo $city; ?>') {
+               if (city.options[i].innerText == "<?php echo $city; ?>") {
                    city.options[i].selected = true;
                    break;
                }
