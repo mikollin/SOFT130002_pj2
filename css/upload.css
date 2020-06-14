@@ -1,0 +1,381 @@
+@CHARSET "UTF-8";
+body {
+
+    font-family: "Microsoft Yahei", sans-serif;
+
+    font-weight: lighter;
+
+}
+
+header {
+
+    
+    background-image: url(../img/timg.jpg);
+   
+    color: white;
+
+    min-width: 1300px;
+	width:auto;
+
+    height: 340px;
+
+    text-align: center;
+
+    margin: 0 auto;
+    padding:0;
+
+}
+
+#title {
+
+    display: inline-block;
+
+    font-size: 64px;
+
+    padding-top: 60px;
+
+    min-width: 960px;
+	width:auto;
+
+}
+
+ 
+
+#titlebottom {
+
+    display: inline-block;
+
+    box-sizing: border-box;
+
+    min-width: 960px;
+	width:auto;
+
+    font-size: 24px;
+
+    padding: 70px 70px 100px 70px;
+
+}
+
+
+ .top{
+    /* 设置宽度高度背景颜色 */
+    height: 50px; 
+    min-width:1300px;
+	 width:auto;
+    padding:0;
+    background:black;
+    float:left;
+    
+   /*离顶部的距离为0*/
+    margin: 0;
+    
+}
+
+
+
+
+
+#now{
+	background-color:#006699;
+}
+#now:hover{
+	 /* 鼠标选中时背景变色 */
+    background-color:#009999;
+}
+
+.top ul{
+    /* 清除ul标签的默认样式 */
+    width: auto;/*宽度也改为自动*/
+    list-style-type: none;
+    white-space:nowrap;
+    overflow: hidden;
+    margin-left: 5%;
+    /* margin-top: 0;          */
+    padding: 0px;
+   margin-top:15px;
+ /* float:left;*/
+   
+
+}
+
+.top li {
+	
+	width:150px;
+    float:left; /* 使li内容横向浮动，即横向排列  */
+    margin-right:2%;  /* 两个li之间的距离*/
+    position: relative;
+    overflow: hidden;
+}
+
+.top li a{
+   /* 设置链接内容显示的格式*/
+    display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+    color:white;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    text-decoration: none; /* 去除下划线 */
+    
+}
+.top li a:hover{
+    /* 鼠标选中时背景变色 */
+    background-color:#009999;
+    
+}
+
+/*#my account{
+	margin-right:0;
+	white-space:nowrap;
+	
+	
+}*/
+/*
+#my account:hover{
+	margin-right:auto;
+	
+    background-color:#009999;
+	
+}*/
+
+
+.top ul li ul{
+    /* 设置二级菜单 */
+    display:inline-block;
+    margin-left: -0.2px;
+   text-align:left;
+   background-color:black;
+   
+    display: none; /* 默认隐藏二级菜单的内容 */
+
+}
+
+/*#upload{
+	 background:url(../img/icon_upload.png) no-repeat;
+	 background-size:30px 30px;
+	 
+}
+
+#pics{
+	 background:url(../img/icon_pic.png) no-repeat;
+	 background-size:30px 30px;
+	
+
+}
+#favor{
+	 background:url(../img/icon_favor.png) no-repeat;
+	 background-size:30px 30px;
+	
+}
+#log{
+	 background:url(../img/icon_log.png) no-repeat;
+	 background-size:30px 30px;
+	 
+}*/
+
+
+.top ul li ul li{
+    /* 二级菜单li内容的显示 */
+   /*padding-left:30px;*/
+    display:inline-block;
+    text-align:left;
+  
+   
+}
+
+#my_account{
+	float:right;
+	margin-right:5%;
+}
+
+.top ul li ul li a{
+	 padding-left:30px;
+	text-align:left;
+	}
+.top ul li:hover ul{
+    /* 鼠标选中二级菜单内容时 */
+    display: block;
+    
+}
+
+
+
+
+
+
+
+
+
+ 
+section {
+
+    min-width: 1300px;
+	width:auto;
+
+    min-height: 750px;
+	height:auto;
+
+    margin: 0;
+
+    text-align: center;
+
+}
+
+#uploadcontent{
+	border-color: black;
+	border-radius: 10px;
+	border-width: 10px;
+	border-style: solid;
+
+	min-width:1200px;
+	width:auto;
+	/*height:1750px;*/
+	height:auto;
+	margin-top:30px;
+	/*float:left;*/
+	vertical-align:middle;
+	 display:inline-block;
+	
+}
+
+.up_til{
+	font-size:45px;
+	 height:70px;
+	 width:auto;
+	 color:white;
+	 background-color:black;
+	
+}
+
+#up_pic{
+	border:2px solid white;
+	margin-top:20px;
+	margin-left:50px;
+	min-width:1100px;
+	width:auto;
+	min-height:400px;
+	height:auto;
+	vertical-align:middle;
+	
+}
+
+#up_line{
+	font-size:50px;
+	margin-top:10px;
+
+	
+}
+
+
+
+#up_trigger{
+	margin-top:20px;;
+	width:200px;
+	height:40px;
+	positon:relative;
+}
+
+#up_button{
+	vertical-align:middle;
+	margin-top:20px;
+	margin-left:450px;
+	width:200px;
+	display:block;
+	positon:relative;
+}
+
+
+#up_descp{
+	border:2px solid white;
+	margin-top:30px;
+	margin-left:50px;
+	width:1100px;
+	min-height:500px;
+	height:auto;
+	vertical-align:middle;
+	font-size:20px;
+	 text-align:left;
+	 
+}
+
+.frame1{
+	width:800px;
+	height:30px;
+	margin-top:-120px;
+}
+
+.frame2{
+	width:800px;
+	height:100px;
+	margin-top:0px;
+}
+
+#submit{
+	border:2px solid white;
+	margin-top:20px;
+	margin-left:50px;
+	width:1100px;
+	height:50px;
+	vertical-align:middle;
+	font-size:20px;
+	 text-align:left;
+}
+
+#submit input{
+
+	width:200px;
+	height:40px;
+}
+
+section hr{
+	color:black;
+	width:1200px;
+	height:10px;
+	background-color:black;
+	border:none;
+}
+
+
+
+footer {
+
+    width: 1300px;
+
+    height: 400px;
+
+    background-color: black;
+
+    margin: 0 auto;
+
+	margin-top:30px;
+
+    font-size: 15px;
+
+}
+
+ 
+
+footer>div {
+	color:white;
+
+    width: 1200px;
+
+    height: 310px;
+
+    display: flex;
+
+    justify-content: space-around; 
+
+    margin: 0 auto;
+	margin-top: 40px;
+
+    padding-top: 90px;
+
+}
+
+ 
+#icon{
+	height:160px;
+	
+	withd:150px;
+}
+

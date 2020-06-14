@@ -1,0 +1,206 @@
+@CHARSET "UTF-8";
+
+body {
+
+    font-family: "Microsoft Yahei", sans-serif;
+
+    font-weight: lighter;
+
+}
+
+ 
+
+header {
+
+    background-image: url(../img/timg.jpg);
+
+
+    color: white;
+
+    width: 1300px;
+
+    height: 990px;
+
+    text-align: center;
+
+    margin: 0 auto;
+
+}
+
+ 
+
+#title {
+
+    display: inline-block;
+
+    font-size: 64px;
+
+    padding-top: 100px;
+
+    width: 960px;
+
+}
+
+ 
+
+#titlebottom {
+
+    display: inline-block;
+
+    box-sizing: border-box;
+
+    width: 960px;
+
+    font-size: 24px;
+
+    padding: 20px 70px 100px 30px;
+
+}
+
+#login{
+
+    display: inline-block;
+    width: 1000px;
+    font-size: 20px;
+    height: 600px;
+    background-color: rgba(255,255,255,0.55);
+
+}
+
+ 
+
+#login div:first-child {
+
+   font-weight: bolder;
+    font-size: 35px;
+
+    color:white;
+   
+    padding-top: 0px;
+
+    padding-bottom: 15px;
+
+}
+
+ 
+
+ 
+
+.name{
+	
+	height:40px;
+	width:300px;
+	margin-right:10px;
+	
+
+}
+
+.name2{
+	width:150px;
+	height:45px;
+	margin-top:20px;
+	background-color:#0099CC;
+	color:white;
+	border-radius: 10px;
+	border:none;
+} 
+
+.name3{
+	width:180px;
+	height:40px;
+	
+	margin-right:10px;
+	
+}
+
+.name4{
+	margin-top:20px;
+	width:230px;
+	height:40px;
+	background-color:#0099CC;
+	color:white;
+	border-radius: 10px;
+	border:none;
+}
+
+.form-group label{
+    font-size: 20px;
+    margin-left:-300px;
+    text-align: left;
+}
+
+.form-control{
+    width:500px;
+    margin-left:260px;
+
+}
+
+.help-block {
+    font-weight: bold;
+} /*修改提示框样式*/
+
+
+
+#special:LINK{
+	color:white;
+    font-weight: bolder;
+}
+
+ #special:VISITED{
+	color:pink;
+     font-weight: bolder;
+}
+
+
+ 
+ 
+
+footer {
+
+    width: 1300px;
+
+    height: 400px;
+
+    background-color: black;
+
+    margin: 0 auto;
+
+   
+
+    font-size: 15px;
+
+}
+
+ 
+
+footer>div {
+	color:white;
+
+    width: 1200px;
+
+    height: 310px;
+
+    display: flex;
+
+    justify-content: space-around; 
+
+    margin: 0 auto;  
+
+    padding-top: 90px;
+
+}
+
+ 
+#icon{
+	height:160px;
+	
+	withd:150px;
+}
+
+
+ 
+
+
+
+ 
+

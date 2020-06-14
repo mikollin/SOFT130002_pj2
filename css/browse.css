@@ -1,0 +1,467 @@
+@CHARSET "UTF-8";
+body {
+
+    font-family: "Microsoft Yahei", sans-serif;
+
+    font-weight: lighter;
+
+}
+
+header {
+
+    
+    background-image: url(../img/timg.jpg);
+   
+    color: white;
+
+    width: 1300px;
+
+    height: 340px;
+
+    text-align: center;
+
+    margin: 0 auto;
+    padding:0;
+
+}
+
+#title {
+
+    display: inline-block;
+
+    font-size: 64px;
+
+    padding-top: 60px;
+
+    width: 960px;
+
+}
+
+ 
+
+#titlebottom {
+
+    display: inline-block;
+
+    box-sizing: border-box;
+
+    width: 960px;
+
+    font-size: 24px;
+
+    padding: 70px 70px 100px 70px;
+
+}
+
+
+ .top{
+    /* 设置宽度高度背景颜色 */
+    height: 50px; 
+    width:1300px;
+    padding:0;
+    background:black;
+    float:left;
+    
+   /*离顶部的距离为0*/
+    margin: 0;
+    
+}
+
+
+
+
+
+#now{
+	background-color:#006699;
+}
+#now:hover{
+	 /* 鼠标选中时背景变色 */
+    background-color:#009999;
+}
+
+.top ul{
+    /* 清除ul标签的默认样式 */
+    width: auto;/*宽度也改为自动*/
+    list-style-type: none;
+    white-space:nowrap;
+    overflow: hidden;
+    margin-left: 5%;
+    /* margin-top: 0;          */
+    padding: 0px;
+   margin-top:15px;
+ /* float:left;*/
+   
+
+}
+
+.top li {
+	
+	width:150px;
+    float:left; /* 使li内容横向浮动，即横向排列  */
+    margin-right:2%;  /* 两个li之间的距离*/
+    position: relative;
+    overflow: hidden;
+}
+
+.top li a{
+   /* 设置链接内容显示的格式*/
+    display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+    color:white;
+    text-align: center;
+    padding: 3px;
+    overflow: hidden;
+    text-decoration: none; /* 去除下划线 */
+    
+}
+.top li a:hover{
+    /* 鼠标选中时背景变色 */
+    background-color:#009999;
+    
+}
+
+/*#my account{
+	margin-right:0;
+	white-space:nowrap;
+	
+	
+}*/
+/*
+#my account:hover{
+	margin-right:auto;
+	
+    background-color:#009999;
+	
+}*/
+
+
+.top ul li ul{
+    /* 设置二级菜单 */
+    display:inline-block;
+    margin-left: -0.2px;
+   text-align:left;
+   background-color:black;
+    position: relative;
+    display: none; /* 默认隐藏二级菜单的内容 */
+
+}
+
+/*#upload{
+	 background:url(../img/icon_upload.png) no-repeat;
+	 background-size:30px 30px;
+	 
+}
+
+#pics{
+	 background:url(../img/icon_pic.png) no-repeat;
+	 background-size:30px 30px;
+	
+
+}
+#favor{
+	 background:url(../img/icon_favor.png) no-repeat;
+	 background-size:30px 30px;
+	
+}
+#log{
+	 background:url(../img/icon_log.png) no-repeat;
+	 background-size:30px 30px;
+	 
+}*/
+
+
+.top ul li ul li{
+    /* 二级菜单li内容的显示 */
+   /*padding-left:30px;*/
+    display:inline-block;
+    text-align:left;
+   
+   
+}
+
+#my_account{
+	float:right;
+	margin-right:5%;
+}
+
+.top ul li ul li a{
+	 padding-left:30px;
+	text-align:left;
+	}
+.top ul li:hover ul{
+    /* 鼠标选中二级菜单内容时 */
+    display: block;
+    
+}
+
+
+
+
+
+
+
+
+
+ 
+section {
+
+    width: 1300px;
+
+	height: 1450px;
+
+    margin: 0;
+
+    text-align: center;
+
+}
+
+#sidebar{
+	float:left;
+	margin-left:10px;
+	 display:inline-block;
+}
+
+#sidesearch{
+	
+	width: 280px;
+	height:90px;
+	color:white;
+	background:black;
+	margin-top:30px;
+	margin-left:0px;
+	vertical-align:middle;
+	border-color: black;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
+	position:relative; 
+	font-weight:bold;
+}
+
+#hot_content{
+	
+	width: 280px;
+	color:white;
+	background:black;
+	margin-top:30px;
+	margin-left:0px;
+	vertical-align:middle;
+	border-color: black;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
+	position:relative; 
+	font-weight:bold;
+}
+#hot_content table  {
+	margin-left:100px;
+	
+}
+#hot_content table tr th a:hover {
+	color:#009999;
+	 
+}
+#hot_content table tr th a{
+ text-decoration: none; /* 去除下划线 */
+ color:white;
+}
+
+#hot_country{
+	
+	width: 280px;
+	color:white;
+	background:black;
+	margin-top:30px;
+	margin-left:0px;
+	vertical-align:middle;
+	border-color: black;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
+	position:relative; 
+	font-weight:bold;
+}
+
+
+#hot_country table  {
+	margin-left:70px;
+}
+
+#hot_country table tr th a:hover {
+	color:#009999;
+}
+
+#hot_country table tr th a{
+ text-decoration: none; /* 去除下划线 */
+ color:white;
+}
+
+#hot_city{
+	
+	width: 280px;
+	color:white;
+	background:black;
+	margin-top:30px;
+	margin-left:0px;
+	vertical-align:middle;
+	border-color: black;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
+	position:relative; 
+	font-weight:bold;
+}
+
+
+#hot_city table  {
+	margin-left:100px;
+}
+
+#hot_city table tr th a:hover {
+	color:#009999;
+}
+
+#hot_city table tr th a{
+ text-decoration: none; /* 去除下划线 */
+ color:white;
+}
+
+
+#filter{
+	border-color: black;
+	border-radius: 10px;
+	border-width: 10px;
+	border-style: solid;
+	margin-right:20px;
+	margin-left:40px;
+	width:910px;
+	min-height:310px;
+	margin-top:30px;
+	float:left;
+	/*position:relative;*/
+	 display:inline-block;
+
+
+}
+
+#filtitle{
+	font-size:45px;
+	 height:70px;
+	 width:auto;
+	 color:white;
+	 background-color:black;
+}
+
+
+
+#fil select{
+	margin-left:30px;
+	margin-top:10px;
+	vertical-align:middle;
+	width:150px;
+	height:30px;
+	
+}
+
+#fil input{
+	float:right;
+	margin-right:30px;
+	margin-top:10px;
+	width:150px;
+	height:30px;
+}
+
+#filpic{
+	vertical-align:middle;
+	margin-top:10px;
+}
+
+/*.container{*/
+/*	width:210px;*/
+/*	height:210px;*/
+/*	text-align:center;*/
+/*	margin:0 0 0 0;*/
+/*	display:inline-block;*/
+/*	!*display: flex;*!*/
+/*	!*align-items: center*!*/
+/*}*/
+
+.pic1{
+
+	display:inline-block;
+	vertical-align:middle;
+	width:200px;
+	height:200px;
+	border: 10px solid white;
+	/*float:left;*/
+}
+
+#page{
+	/*bottom:2px;*/
+	/*left:400px;*/
+	/*z-index:999;*/
+	/*position:absolute;*/
+	margin-top:20px;
+	margin-bottom:20px;
+	text-align:center;
+}
+#page a{
+	
+	font-size:30px;
+	font-weight:bold;
+	text-decoration: none; /* 去除下划线 */
+	color:black;
+   
+}
+
+#page a:hover{
+	color:#009999;
+	 
+}
+ 
+
+
+
+
+
+footer {
+
+    width: 1300px;
+
+    height: 400px;
+
+    background-color: black;
+
+    margin: 0 auto;
+
+   
+
+    font-size: 15px;
+
+}
+
+ 
+
+footer>div {
+	color:white;
+
+    width: 1200px;
+
+    height: 310px;
+
+    display: flex;
+
+    justify-content: space-around; 
+
+    margin: 0 auto;  
+
+    padding-top: 90px;
+
+}
+
+ 
+#icon{
+	height:160px;
+	
+	withd:150px;
+}
+
