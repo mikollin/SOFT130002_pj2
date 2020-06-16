@@ -242,7 +242,7 @@ if($valid) {
     $_SESSION['username'] = $username;
 }
 echo " <script   language = 'javascript' type = 'text/javascript' > ";
-echo "window.location.href='../html/index.php'";
+echo "window.location.href='../index.php'";
 echo " </script > ";
 ?>
 ```
@@ -386,6 +386,231 @@ DELETE FROM `travelimagefavor` WHERE path='h' and username='s'
 同时对于setFavored.php和detailCancelFavored.php中，均先通过path得到uid和favorednum和imageid，然后收藏favorednum+1，取消收藏favorednum-1，然后更新travelimage中的favorednum，然后对应的，取消收藏把通过imageid和uid找到的travelimagefavor中的记录删除(一开始是用path，但是因为助教原数据没有path之后改了)，添加收藏插入新的记录。
 
 然后设置未登录的用户可以查看detail，但是在点击收藏/取消收藏时（考虑url恶意改写问题）会自动跳转到登录页面。这里用js实现path是否为空。这里有个坑在于判断GET的参数不是判断！=null，而应该是`''`来代表空字符。
+
+基本实现如下：
+
+setFavored.php:
+
+```php
+<?php
+session_start();
+header("Content-type:text/html;charset-utf-8");
+header("Access-Control-Allow-Origin: *"); //解决跨域
+header('Access-Control-Allow-Methods:POST');// 响应类型
+
+
+
+
+if(!isset($_SESSION['username'])) {
+echo 'Please log in first !';
+
+echo "<script>window.location.href='../html/login.html'</script>";
+}
+else {
+
+
+    $username = $_SESSION['username'];
+
+
+    $user = 'root';
+    $password = 'root';
+    $db = 'Pj2';
+    $host = 'localhost';
+    $port = 3306;
+    $serve = 'localhost:3306';
+    $con = new Mysqli($serve, $user, $password, $db);
+    $con->query("SET NAMES utf8");//解决中文乱码问题
+
+    $path = $_GET["path"];
+
+    $sql = "select * from travelimage where path='$path'";
+    $result = $con->query($sql);
+    $row = $result->fetch_row();
+    $imageid = $row[0];
+    $sql="select * from traveluser where username='$username'";
+    $result=$con->query($sql);
+    $row=$result->fetch_row();
+    $uid=$row[0];
+
+    $sql = "select * from travelimagefavor where imageid='$imageid'and uid='$uid'";
+    $result = $con->query($sql);
+    $valid;
+
+    if (mysqli_num_rows($result) == 0) {
+        $valid = true;
+    } else {
+        $valid = false;
+    }
+    $sql = "select * from travelimage where path='$path'";
+    $result = $con->query($sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = $result->fetch_row()) {
+            $favoredNum = $row[13];
+            if ($valid == true)
+                $favoredNum = $row[13] + 1;
+            //this is the author's uid not current user $uid=$row[7];
+            $imageid = $row[0];
+            $title = $row[1];
+            $des = $row[2];
+            $country = $row[11];
+            $city = $row[12];
+            $content = $row[10];
+            $author = $row[8];
+
+
+        }
+    }
+
+    $sql="select * from traveluser where username='$username'";
+    $result=$con->query($sql);
+    $row=$result->fetch_row();
+    $uid=$row[0];
+
+    if ($path != null && $valid == true) {
+        $sql = "UPDATE `travelimage` SET `FavoredNum` = '$favoredNum' WHERE `travelimage`.`path` = '$path'";
+        $result = $con->query($sql);
+        $sql = "INSERT INTO `travelimagefavor`(`UserName`,`ImageID`,`Path`,`UID`) VALUES ('$username','$imageid','$path','$uid')";
+        $result = $con->query($sql);
+    }
+    echo " <script   language = 'javascript' type = 'text/javascript' > ";
+
+    echo "window.location.href='../html/detail.php?path=";
+    echo $path;
+//    echo '&title=';
+//    echo $title;
+//    echo '&description=';
+//    echo $des;
+//    echo '&country=';
+//    echo $country;
+//    echo '&city=';
+//    echo $city;
+//    echo '&content=';
+//    echo $content;
+//    echo '&author=';
+//    echo $author;
+//    echo '&favorNum=';
+//    echo $favoredNum;
+//    echo '&favored=';
+//    echo 'true';
+    echo '\'';
+    echo " </script > ";
+
+    mysqli_free_result($result);
+    mysqli_close($con);//关闭mysql链接答
+}
+```
+
+detailCancelFavored.php:
+
+```php
+<?php
+
+header("Content-type:text/html;charset-utf-8");
+header("Access-Control-Allow-Origin: *"); //解决跨域
+header('Access-Control-Allow-Methods:POST');// 响应类型
+
+//$upload="upload";
+session_start();
+
+if(!isset($_SESSION['username'])) {
+    echo 'Please log in first !';
+
+    echo "<script>window.location.href='../html/login.html'</script>";
+}
+else {
+
+    $username = $_SESSION['username'];
+
+
+    $user = 'root';
+    $password = 'root';
+    $db = 'Pj2';
+    $host = 'localhost';
+    $port = 3306;
+    $serve = 'localhost:3306';
+    $con = new Mysqli($serve, $user, $password, $db);
+    $con->query("SET NAMES utf8");//解决中文乱码问题
+
+    $path = $_GET["path"];
+
+    $sql="select * from traveluser where username='$username'";
+    $result=$con->query($sql);
+    $row=$result->fetch_row();
+    $uid=$row[0];
+
+    $sql = "select * from travelimage where path='$path'";
+    $result = $con->query($sql);
+    $row = $result->fetch_row();
+    $imageid = $row[0];
+
+    $sql="select * from travelimagefavor where imageid='$imageid'and uid='$uid'";
+    $result=$con->query($sql);
+    $valid;
+
+    if (mysqli_num_rows($result) > 0) {
+        $valid = true;
+    } else {
+        $valid = false;
+    }
+
+    $sql = "select * from travelimage where path='$path'";
+    $result = $con->query($sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = $result->fetch_row()) {
+            $favoredNum = $row[13];
+            if ($valid == true)
+                $favoredNum = $row[13] - 1;
+            //this is the author's uid not current user $uid=$row[7];
+            $imageid = $row[0];
+            $title = $row[1];
+            $des = $row[2];
+            $country = $row[11];
+            $city = $row[12];
+            $content = $row[10];
+            $author = $row[8];
+
+        }
+    }
+
+
+    if ($path != null && $valid == true) {
+        $sql = "UPDATE `travelimage` SET `FavoredNum` = $favoredNum WHERE `travelimage`.`path` = '$path'";
+        $result = $con->query($sql);
+        $sql = "DELETE FROM `travelimagefavor` WHERE imageid='$imageid' and uid='$uid'";
+        $result = $con->query($sql);
+    }
+
+    mysqli_free_result($result);
+    mysqli_close($con);//关闭mysql链接答
+    echo " <script   language = 'javascript' type = 'text/javascript' > ";
+
+    echo "window.location.href='../html/detail.php?path=";
+    echo $path;
+//    echo '&title=';
+//    echo $title;
+//    echo '&description=';
+//    echo $des;
+//    echo '&country=';
+//    echo $country;
+//    echo '&city=';
+//    echo $city;
+//    echo '&content=';
+//    echo $content;
+//    echo '&author=';
+//    echo $author;
+//    echo '&favorNum=';
+//    echo $favoredNum;
+
+    echo '\'';
+    echo " </script > ";
+
+
+}
+```
+
+
 
 ***同时考虑到index主页刷新随机图片显示的问题，由于助教给的数据中还有path为空的项目……这里加了判断，如果path为空会提示并跳转到首页***
 
@@ -658,7 +883,7 @@ function change(){
 </script>
 ```
 
-然后当用户点击filter按钮之后，会提交包含这三个多选框的表单到当前页面，且方式为GET，于是接下来的处理既为：
+然后当用户点击filter按钮之后，会提交包含这三个多选框的表单到当前页面，且方式为GET，于是接下来的处理既为，同时因为数据库中有城市名带'所以city作为参数要用双引号：
 
 ```php
 else if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['upload_pic_country']!=''&&$_GET['upload_pic_city']!=''&&$_GET['select_content']!='')
@@ -1728,7 +1953,7 @@ if (file_exists('../upfile/' . $imgFileName)||$valid) {
   
 ```
 
-
+然后这里的删除收藏基本同detail，不再赘述。
 
 ## √ Bonus
 

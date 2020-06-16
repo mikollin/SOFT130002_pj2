@@ -31,6 +31,6 @@ if($valid) {
     $_SESSION['username'] = $username;
 }
 echo " <script   language = 'javascript' type = 'text/javascript' > ";
-echo "window.location.href='../html/index.php'";
+echo "window.location.href='../index.php'";
 echo " </script > ";
 ?>

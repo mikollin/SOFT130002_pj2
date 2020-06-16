@@ -29,7 +29,16 @@ else {
 
     $path = $_GET["path"];
 
-    $sql = "select * from travelimagefavor where path='$path'and username='$username'";
+    $sql = "select * from travelimage where path='$path'";
+    $result = $con->query($sql);
+    $row = $result->fetch_row();
+    $imageid = $row[0];
+    $sql="select * from traveluser where username='$username'";
+    $result=$con->query($sql);
+    $row=$result->fetch_row();
+    $uid=$row[0];
+
+    $sql = "select * from travelimagefavor where imageid='$imageid'and uid='$uid'";
     $result = $con->query($sql);
     $valid;
 
