@@ -324,7 +324,7 @@ DELETE FROM `travelimagefavor` WHERE path='h' and username='s'
 
 
 
-***但是后来***，通过研究助教给的数据库的数据，感觉还是全部改成通过path来从数据库中获取数据更好。于是将图片的参数只改为path（这里其实应该传递id更合理，但是所有的删除图片和切换收藏的php都已经写好是根据path来看，同时path也在数据库中设置了唯一值所以也不改了，感觉差别不大）。然后把整个detail页面改成php文件，通过path来访问travelimage里面的数据，然后逐一显示，还能get到imageid，favoredNum也直接通过imageid去travelimagefavor中找记录的个数，直接显示，并切换状态，同时由于图片大小不同，长宽高没有限制，于是js动态设置宽度以保证页面不会变形过度，如下：
+***但是后来***，通过研究助教给的数据库的数据，感觉还是全部改成通过path来从数据库中获取数据更好。于是将图片的参数只改为path（这里其实应该传递id更合理，但是所有的删除图片和切换收藏的php都已经写好是根据path来看，同时path也在数据库中设置了唯一值所以也不改了，感觉差别不大）。然后把整个detail页面改成php文件，通过path来访问travelimage里面的数据，然后逐一显示，还能get到imageid，favoredNum也直接通过imageid去travelimagefavor中找记录的个数，直接显示，并切换状态，同时由于图片大小不同，长宽高没有限制，于是js动态设置宽度以保证页面不会变形过度，如下，通过判断当前用户是否收藏了这张图片，如果是的话valid为true，不然为false，然后根据valid来判断收藏的状态，如果为收藏，设置按钮href跳转到取消收藏的php，如果未收藏，设置超链接a的href到收藏的php：
 
 ```php
 <script defer>
