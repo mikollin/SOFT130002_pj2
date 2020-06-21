@@ -739,8 +739,7 @@ else{
 
         echo '<div id="page"> <a href="./browse.php?page=';
         echo ($page-1)>0 ? $page-1:1;
-        echo '&browse_search=';
-        echo $title;
+
         echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {

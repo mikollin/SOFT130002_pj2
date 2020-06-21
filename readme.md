@@ -2261,3 +2261,4 @@ mysql5.7版本，默认root禁止通过phpmyadmin使用密码登录的。
 6、如果想每次保存都上传到服务器中的画，请勾选Tools->Deployment->Atuomatic upload(alway)
 7、可以通过Tools->Deployment下的Upload和Download上传和下载项目。
 （以上的原文链接：https://blog.csdn.net/qq_33172274/article/details/83721596 ）
+

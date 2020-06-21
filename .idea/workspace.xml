@@ -19,18 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a65f675b-122c-43e3-9224-a85e9ed7912a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="c45c732c-970c-4c40-a2bd-ad9ada8ca831" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/myfavor.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/myfavor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mypics.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/mypics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,22 +57,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a65f675b-122c-43e3-9224-a85e9ed7912a" name="Default Changelist" comment="" />
-      <created>1592141034966</created>
+      <changelist id="c45c732c-970c-4c40-a2bd-ad9ada8ca831" name="Default Changelist" comment="" />
+      <created>1592724875981</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1592141034966</updated>
-      <workItem from="1592141037282" duration="36000" />
-      <workItem from="1592281756329" duration="1411000" />
-      <workItem from="1592283314656" duration="387000" />
-      <workItem from="1592653285680" duration="778000" />
-      <workItem from="1592657304058" duration="46000" />
-      <workItem from="1592657390096" duration="43000" />
-      <workItem from="1592657665416" duration="681000" />
-      <workItem from="1592665771586" duration="1138000" />
-      <workItem from="1592667346246" duration="1000" />
-      <workItem from="1592671836628" duration="1608000" />
-      <workItem from="1592700683405" duration="2638000" />
+      <updated>1592724875981</updated>
+      <workItem from="1592724882675" duration="154000" />
     </task>
     <servers />
   </component>
@@ -89,15 +70,6 @@
     <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
