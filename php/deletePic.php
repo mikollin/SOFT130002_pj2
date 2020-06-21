@@ -16,7 +16,7 @@ $port = 3306;
 $serve='localhost:3306';
 
 $con = new Mysqli($serve,$user,$password,$db);
-
+$con->query("SET NAMES utf8");//解决中文乱码问题
 $sql="select * from travelimage where path='$image'";
 $result=$con->query($sql);
 $row=$result->fetch_row();

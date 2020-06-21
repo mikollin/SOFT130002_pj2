@@ -40,7 +40,7 @@ else {
 
     $sql = "select * from travelimagefavor where imageid='$imageid'and uid='$uid'";
     $result = $con->query($sql);
-    $valid;
+    $valid=false;
 
     if (mysqli_num_rows($result) == 0) {
         $valid = true;

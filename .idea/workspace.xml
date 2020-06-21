@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45c732c-970c-4c40-a2bd-ad9ada8ca831" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/upfile/2-6596048341.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/upfile/2-6596048341.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/deletePic.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/deletePic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/detailCancelFavored.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/detailCancelFavored.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/findRelatedCity.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/findRelatedCity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/passwordCheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/passwordCheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/setFavored.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/setFavored.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +71,7 @@
       <workItem from="1592725544619" duration="485000" />
       <workItem from="1592726982908" duration="525000" />
       <workItem from="1592728547412" duration="213000" />
+      <workItem from="1592730439041" duration="858000" />
     </task>
     <servers />
   </component>

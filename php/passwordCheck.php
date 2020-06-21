@@ -11,6 +11,7 @@ $serve='localhost:3306';
 
 
 $con = new Mysqli($serve,$user,$password,$db);
+$con->query("SET NAMES utf8");//解决中文乱码问题
 $passwordRegistered=$_POST['password'];
 $sql="select pass from traveluser where username='$_POST[id]'";
 $result=$con->query($sql);

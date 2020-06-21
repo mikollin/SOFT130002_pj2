@@ -33,6 +33,7 @@ $host = 'localhost';
 $port = 3306;
 $serve='localhost:3306';
 $con = new Mysqli($serve,$user,$password,$db);
+$con->query("SET NAMES utf8");//解决中文乱码问题
 $pass=password_hash($passwordRegister, PASSWORD_DEFAULT);
 $sql="INSERT INTO `traveluser`(`UserName`, `Email`,`Pass`) VALUES ('$username','$email','$pass')";
 if($username!=null&&$email!=null&&$passwordRegister!=null)
