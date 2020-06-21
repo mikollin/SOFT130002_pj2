@@ -318,14 +318,14 @@ $pic=$result->fetch_row();
         notlike.style.color="red";
         notlike.setAttribute('href','../php/detailCancelFavored.php?path='+'<?php echo $path; ?>');
         notlike.onclick = function () {
-            alert('若已登陆马上取消收藏，若未登录跳转到登录界面，请登录后操作...');
+            //alert('若已登陆马上取消收藏，若未登录跳转到登录界面，请登录后操作...');
         }
     }
     else{
         notlike.style.color="white";
         notlike.setAttribute('href','../php/setFavored.php?path='+'<?php echo $path; ?>');
         notlike.onclick = function () {
-            alert('若已登陆马上收藏，若未登录跳转到登录界面，请登录后操作...');
+            //alert('若已登陆马上收藏，若未登录跳转到登录界面，请登录后操作...');
         }
     }
 

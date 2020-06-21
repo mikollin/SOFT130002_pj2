@@ -20,11 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a65f675b-122c-43e3-9224-a85e9ed7912a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/setFavored.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/setFavored.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/myfavor.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/myfavor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mypics.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/mypics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
@@ -63,6 +74,14 @@
       <workItem from="1592141037282" duration="36000" />
       <workItem from="1592281756329" duration="1411000" />
       <workItem from="1592283314656" duration="387000" />
+      <workItem from="1592653285680" duration="778000" />
+      <workItem from="1592657304058" duration="46000" />
+      <workItem from="1592657390096" duration="43000" />
+      <workItem from="1592657665416" duration="681000" />
+      <workItem from="1592665771586" duration="1138000" />
+      <workItem from="1592667346246" duration="1000" />
+      <workItem from="1592671836628" duration="1608000" />
+      <workItem from="1592700683405" duration="2638000" />
     </task>
     <servers />
   </component>
@@ -82,13 +101,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="240" y="49" key="#Deployment" timestamp="1592702265522">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="240" y="49" key="#Deployment/0.23.1280.722@0.23.1280.722" timestamp="1592702265522" />
+    <state x="240" y="49" key="#Deployment/0.23.1280.729@0.23.1280.729" timestamp="1592667339438" />
     <state x="316" y="34" key="#PHP" timestamp="1592282143863">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state x="316" y="34" key="#PHP/0.23.1280.724@0.23.1280.724" timestamp="1592282143863" />
+    <state x="224" y="36" key="#SSH_Configurations" timestamp="1592702207089">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="224" y="36" key="#SSH_Configurations/0.23.1280.722@0.23.1280.722" timestamp="1592702207089" />
+    <state x="224" y="36" key="#SSH_Configurations/0.23.1280.729@0.23.1280.729" timestamp="1592667222041" />
+    <state x="100" y="123" width="1080" height="517" key="DiffContextDialog" timestamp="1592709806845">
+      <screen x="0" y="23" width="1280" height="725" />
+    </state>
+    <state x="100" y="123" width="1080" height="517" key="DiffContextDialog/0.23.1280.725@0.23.1280.725" timestamp="1592709806845" />
     <state x="332" y="23" width="919" height="703" key="dock-window-1" timestamp="1592283256758">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state x="332" y="23" width="919" height="703" key="dock-window-1/0.23.1280.724@0.23.1280.724" timestamp="1592283256758" />
+    <state x="531" y="121" key="ftp.server.browser" timestamp="1592667326655">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="531" y="121" key="ftp.server.browser/0.23.1280.729@0.23.1280.729" timestamp="1592667326655" />
+    <state x="513" y="282" key="publish.login" timestamp="1592667323685">
+      <screen x="0" y="23" width="1280" height="729" />
+    </state>
+    <state x="513" y="282" key="publish.login/0.23.1280.729@0.23.1280.729" timestamp="1592667323685" />
+    <state x="305" y="75" width="670" height="671" key="search.everywhere.popup" timestamp="1592702122485">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="305" y="75" width="670" height="671" key="search.everywhere.popup/0.23.1280.722@0.23.1280.722" timestamp="1592702122485" />
+    <state x="305" y="75" width="670" height="676" key="search.everywhere.popup/0.23.1280.728@0.23.1280.728" timestamp="1592667019614" />
+    <state x="305" y="75" width="670" height="677" key="search.everywhere.popup/0.23.1280.729@0.23.1280.729" timestamp="1592667299295" />
   </component>
 </project>

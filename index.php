@@ -104,6 +104,7 @@ session_start();
 
 
     $con = new Mysqli($serve,$user,$password,$db);
+    $con->query("SET NAMES utf8");
 
 if($_GET["fresh"]==true){
     $sql="select * from travelimage order by Rand() limit 0,8";

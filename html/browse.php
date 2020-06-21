@@ -122,7 +122,7 @@ $con->query("SET NAMES utf8");//解决中文乱码问题
 <br>
 
    <div id="hot_country">
-                    <p><i class="fa fa-fire" aria-hidden="true"></i> HOT COUNTRYS</p>
+                    <p><i class="fa fa-fire" aria-hidden="true"></i> HOT COUNTRIES</p>
                     <table>
                         <?php
 
@@ -343,7 +343,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['browse_search']!='')
         echo ($page-1)>0 ? $page-1:1;
         echo '&browse_search=';
         echo $title;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -355,13 +355,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['browse_search']!='')
             echo $i;
             echo '&browse_search=';
             echo $title;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
         echo '&browse_search=';
         echo $title;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
     } else {
         echo "<h2>No results</h2>";
     }
@@ -433,7 +433,7 @@ else if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['upload_pic_country']!=''&&$_
         echo $country;
         echo '&upload_pic_city=';
         echo $city;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -449,7 +449,7 @@ else if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['upload_pic_country']!=''&&$_
             echo $country;
             echo '&upload_pic_city=';
             echo $city;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
@@ -459,7 +459,7 @@ else if($_SERVER["REQUEST_METHOD"] == "GET"&&$_GET['upload_pic_country']!=''&&$_
         echo $country;
         echo '&upload_pic_city=';
         echo $city;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
     } else {
 
         echo "<h2>No results</h2>";
@@ -513,7 +513,7 @@ else if($_GET['hot_content']!=''){
         echo ($page-1)>0 ? $page-1:1;
         echo '&hot_content=';
         echo $content;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -525,13 +525,13 @@ else if($_GET['hot_content']!=''){
             echo $i;
             echo '&hot_content=';
             echo $content;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
         echo '&hot_content=';
         echo $content;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
     } else {
         echo "<h2>No results</h2>";
     }
@@ -592,7 +592,7 @@ else if($_GET['hot_country']!=''){
         echo ($page-1)>0 ? $page-1:1;
         echo '&hot_country=';
         echo $countryCode;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -604,13 +604,13 @@ else if($_GET['hot_country']!=''){
             echo $i;
             echo '&hot_country=';
             echo $countryCode;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
         echo '&hot_country=';
         echo $countryCode;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
     } else {
         echo "<h2>No results</h2>";
     }
@@ -669,7 +669,7 @@ else if($_GET['hot_city']!=''){
         echo ($page-1)>0 ? $page-1:1;
         echo '&hot_city=';
         echo $cityCode;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -681,13 +681,13 @@ else if($_GET['hot_city']!=''){
             echo $i;
             echo '&hot_city=';
             echo $cityCode;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
         echo '&hot_city=';
         echo $cityCode;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
     } else {
         echo "<h2>No results</h2>";
     }
@@ -741,7 +741,7 @@ else{
         echo ($page-1)>0 ? $page-1:1;
         echo '&browse_search=';
         echo $title;
-        echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+        echo '" >&lt&lt&nbsp</a>';
         $i = 1;
         for (; $i <= $pageCount; $i = $i + 1) {
             if ($i == $page) {
@@ -751,15 +751,13 @@ else{
             }
             echo 'href="./browse.php?page=';
             echo $i;
-            echo '&browse_search=';
-            echo $title;
-            echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+
+            echo '" > &nbsp' . $i . ' &nbsp</a> ';
         }
         echo '<a href="./browse.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
-        echo '&browse_search=';
-        echo $title;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+
+        echo '" > >> </a></div>';
     }
 
 }

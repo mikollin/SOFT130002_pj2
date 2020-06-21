@@ -168,7 +168,7 @@ if(isset($_SESSION['username'])){
 
             echo '<div id="page"> <a href="./myfavor.php?page=';
             echo ($page-1)>0 ? $page-1:1;
-            echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+            echo '" >&lt&lt&nbsp</a>';
             $i=1;
             for(;$i<=$pageCount;$i=$i+1){
                 if($i==$page){
@@ -179,11 +179,11 @@ if(isset($_SESSION['username'])){
                 }
                 echo 'href="./myfavor.php?page=';
                 echo $i;
-                echo '" onclick="alert(\'正在跳转\')"> &nbsp'.$i.' &nbsp</a> ';
+                echo '" > &nbsp'.$i.' &nbsp</a> ';
             }
             echo '<a href="./myfavor.php?page=';
         echo ($page+1)<=$pageCount ? $page+1:$pageCount;
-        echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+        echo '" > >> </a></div>';
 
 
 

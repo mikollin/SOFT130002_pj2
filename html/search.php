@@ -217,7 +217,7 @@ session_start();
                echo $title;
                echo '&filter_description=';
                echo $description;
-               echo '" onclick="alert(\'正在跳转前一页\')">&lt&lt&nbsp</a>';
+               echo '" >&lt&lt&nbsp</a>';
            $i = 1;
            for (; $i <= $pageCount; $i = $i + 1) {
                if ($i == $page) {
@@ -233,7 +233,7 @@ session_start();
                echo $title;
                echo '&filter_description=';
                echo $description;
-               echo '" onclick="alert(\'正在跳转\')"> &nbsp' . $i . ' &nbsp</a> ';
+               echo '" > &nbsp' . $i . ' &nbsp</a> ';
            }
            echo '<a href="./search.php?page=';
            echo ($page+1)<=$pageCount ? $page+1:$pageCount;
@@ -243,7 +243,7 @@ session_start();
            echo $title;
            echo '&filter_description=';
            echo $description;
-           echo '" onclick="alert(\'正在跳转后一页\')"> >> </a></div>';
+           echo '" > >> </a></div>';
        }
        else{
            echo "<h2>No results</h2>";

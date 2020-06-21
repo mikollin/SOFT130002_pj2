@@ -21,7 +21,7 @@ header("Content-type:text/html;charset-utf-8");
 $username=$_POST['id'];
 $email=$_POST['email'];
 $passwordRegister=$_POST['password1'];
-$json_arr=array("id"=>$username,"email"=>$email,"password1"=>$password);
+$json_arr=array("id"=>$username,"email"=>$email,"password1"=>$passwordRegister);
 $json_obj=json_encode($json_arr);
 echo $json_obj;
 echo "正在跳转，请稍后……";
