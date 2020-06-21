@@ -219,7 +219,7 @@ $con->query("SET NAMES utf8");//解决中文乱码问题
 
 
                             $con = new Mysqli($serve,$user,$password,$db);
-
+                            $con->query("SET NAMES utf8");//解决中文乱码问题
 
 
                             $sql="select geocountries.CountryName,geocountries.ISO from geocountries";
