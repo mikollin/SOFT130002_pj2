@@ -2060,3 +2060,204 @@ for(;$i<36;$i++) {
 成功！数据库里如下：
 
 ![哈希加盐](img/哈希加盐.png)
+
+
+
+#### 2、远程主机部署并域名展示
+
+最终部署好的成果，域名⬇️（花了我整整两天熬到半夜orzzzzz）
+
+http://mikollin.xyz:63888/SOFT130002_pj2/index.php
+
+首先根据助教之前发的服务器指南去阿里云领主机。
+
+![aliyun1](img/aliyun1.png)
+
+然后去腾讯云注册域名并且实名认证，通过后要把我的主机与我的域名绑定起来。即进入域名解析列表，快速添加网站，填入阿里云获得的主机名，就绑定好了。
+
+![腾讯云1](img/腾讯云1.png)
+
+可以看到成功了：
+
+![腾讯云2](img/腾讯云2.png)
+
+然后我先通过filezilla把我的pj的文件传到了远程主机相应web的根目录/var/www/html里。
+
+这里有个问题该怎么远程访问主机呢？通过终端命令行有点不方便，而且很不稳定老是闪退。。。
+
+然后发现可以通过阿里云的管理平台直接远程登录，但是登陆之前我们先要来设置一下安全组。
+
+![aliyun2](img/aliyun2.png)![aliyun3](img/aliyun3.png)
+
+然后远程登录：
+
+先点击远程连接，然后填写下表
+
+![aliyun4](img/aliyun4.png)
+
+之后看到的就是终端形式（这个比较稳定，而且还有可视化的文件树，这里一开始尝试了安装图形化桌面，但是好像没什么用。。。）
+
+![aliyun5](img/aliyun5.png)
+
+然后要通过命令行下载apache和mysql和php，并且进行配置。。。
+
+这里实在是太花时间了，遇到了各种各样的问题。基本简单总结一下并梳理一下大致过程：
+
+```
+sudo apt-get install apache2
+```
+
+```
+sudo apt-get install php7.0
+```
+
+```
+sudo apt-get install mysql-server mysql-client 
+```
+
+这里的按照网上的博客都没什么问题，但是以下两个php与apache和mysql连接的插件和扩展老是说我没有找到package
+
+```
+sudo apt-get install libapache2-mod-php7.0
+sudo apt-get install php7.0-mysql
+```
+
+网上搜索了一番发现：
+
+```
+sudo apt-get update
+sudo apt-get install apache2 php7.0 php7.0-mysql mysql-server
+```
+
+似乎可以成功了，还是要更新一下。
+
+之后打开mysql和apache：这里给出基本操作
+
+```
+ Linux系统为Ubuntu
+
+一、Start Apache 2 Server /启动apache服务
+# /etc/init.d/apache2 start
+or
+$ sudo /etc/init.d/apache2 start
+二、 Restart Apache 2 Server /重启apache服务
+# /etc/init.d/apache2 restart
+or
+$ sudo /etc/init.d/apache2 restart
+三、Stop Apache 2 Server /停止apache服务
+# /etc/init.d/apache2 stop
+or
+$ sudo /etc/init.d/apache2 stop
+```
+
+```
+启动mysql： 
+方式一：sudo /etc/init.d/mysql start  
+方式二：sudo service mysql start 停止mysql： 
+方式一：sudo /etc/init.d/mysql stop  
+方式二：sudo service mysql stop 
+重启mysql： 
+方式一：sudo/etc/init.d/mysql restart 
+方式二：sudo service mysql restart
+```
+
+然后通过主机名/域名可以看到Apache的欢迎网站，然后试着写一个phpinfo（）也能成功了。
+
+然后通过
+
+```
+mysql -uroot -p
+```
+
+进入mysql并且通过create建表，use切换表，source导入表，均成功。
+
+一开始以为这样就可以完成了，打开了页面发现无法连接数据库。但是我的mysql已经确定打开，可以看到状态为running，同时也可以通过命令行进入mysql，看到对应的信息，不知道为什么不行。
+
+在这里焦灼了很长时间，尝试了各种办法，一开始打算，换方法，用mamp连接，但是似乎mamp的虚拟主机连接的配置问题搞了很久，一直出错还是没法显示，尝试了各种办法还是不行。
+
+第二天发现是因为上面有个包libapache2-mod-auth-mysql没装，导致php和mysql无法连接。
+
+但是安装过程中总是报错如下：Unable to locate package libapache2-mod-auth-mysql
+
+更新update了也不行，之后发现是我们php.ini需要更改一样东西，由于使用了php7，而php7不支持连接mysql了应该用mysqli。
+
+解决方法如下:
+locate php.ini
+找到php.ini文件并且编辑此文件, 找到 ;extension=php_mysqli.dll 这一行去掉前面的 ; 然后保存此文件。可以看到安装成功！简单的测试文件中显示数据库连接成功。但是手动增加表中的列太麻烦了，已经6/21号了ddl迫在眉睫！！
+
+本来想安装本地用的mamp，但是查不到命令行的安装，同时本地传过去太耗时间了，也不知道能不能运行。之后发现阿里云的远程机本来就支持phpmyadmin！
+
+于是采用如下方法：安装phpmyadmin-Mysql数据库管理
+
+sudo apt-get install phpmyadmin
+
+phpmyadmin设置：
+
+在安装过程中会要求选择Web server：apache2或lighttpd，使用空格键选定apache2，按tab键然后确定。然后会要求输入设置的Mysql数据库密码连接密码。
+
+然后将phpmyadmin与apache2建立连接，根目录为/var/www/html，phpmyadmin在/usr/share /phpmyadmin目录，所以就用命令：
+
+sudo ln -s /usr/share/phpmyadmin /var/www/html 建立软连接
+
+phpmyadmin测试：在浏览器地址栏中打开：http://mikollin.xyz:63888/phpmyadmin
+
+然后发现还有错？？
+
+首先报错，无法看到登录的界面：
+
+```
+The mbstring extension is missing. Please check your PHP configuration.
+```
+
+发现是需要打开php的扩展：；extension=php_mbstring.dll，去掉前面的分号即可
+
+然后发现之前设置的root和密码无法登陆？？太诡异了！！！一度非常想放弃！但是！！
+
+发现还是重新创建一个新的用户更方便，更改root密码非常繁琐，而且改了之后好像也没什么效果。
+
+#### 查阅资料发现：
+
+mysql5.7版本，默认root禁止通过phpmyadmin使用密码登录的。
+
+所以，新装完MySQL和phpmyadmin以后，如果使用root登录，会出现以下提示信息：
+
+| 1    | 无法登录 MySQL 服务器                                        |
+| ---- | ------------------------------------------------------------ |
+| 2    | mysqli_real_connect(): (HY000/1698): Access denied for user 'root'@'localhost' |
+
+最近简单的解决方法就是在服务器命令行下直接操作新增一个完全权限的账户：
+
+| 1    | GRANT ALL PRIVILEGES ON *.* TO '用户名'@'localhost' IDENTIFIED BY '密码' WITH GRANT OPTION; |
+| ---- | ------------------------------------------------------------ |
+|      |                                                              |
+
+然后通过新用户登录phpadmin！成功！
+
+但是发现远程主机与本地相比有好多问题，一个是我的注册如果用了hash加盐，密码就会自动变成空字符串的加密？？？导致login 无法匹配，只能在远程主机上把这步去掉，但是在本地都是一切正常的。
+
+还有最重要的一点是：在upload时发现图片无法显示最终发现：
+
+由于Linux系统的安全性原则，改目录下的文件读写权限是只允许root用户操作的，所以我们不能在www/html文件夹中新建php文件，也不能修改和删除，即我们不拥有写/var/www/html/upfile的权限，必须要先修改读写权限。
+
+`sudo chmod 777 /var/www/html/upfile`
+
+最终再经过各种调试终于成功了orz
+
+![部署成功](img/部署成功.png)
+
+
+
+
+
+最后还可以把phpstorm与远程主机连接起来方便修改和调试：
+
+服务器与PHPStorm的配合使用
+如果说只用服务器来开发，这不会是一个好的主意，而且是一个很危险、很浪费时间的注意。接下来，我们使用IDE配合服务器来使用，拒绝项目用U盘和网盘拷来拷去，只要有网络，任何地方都可以看见我的项目。
+1、Tools->Deployment->Configuration
+2、按+添加一个Server，Name任意，Type选择SFTP，
+3、Connection里面需要填写SFTP host，它是你的公网IP地址，Root path选择/var/www/html它是你的项目地址，如果你设置了其它地址，请修改该项，User name 、Password分别是你的服务器的用户名和密码。
+4、Mappings需要填写Deployment path on server '本地项目名' 为/，只要点后面的文件夹即可。
+5、如果想要调试的时候用服务器来调试，那么请选择Use this server as default，如果没有选择，那么会用你之前配置的服务器来调试，没有配置则用PHPStorm内置服务器调试（这也就是为什么调试的时候地址栏后面会有一大串的字符的原因）
+6、如果想每次保存都上传到服务器中的画，请勾选Tools->Deployment->Atuomatic upload(alway)
+7、可以通过Tools->Deployment下的Upload和Download上传和下载项目。
+（以上的原文链接：https://blog.csdn.net/qq_33172274/article/details/83721596 ）
