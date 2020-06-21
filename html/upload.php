@@ -176,7 +176,7 @@ if(isset($_SESSION['username'])):
 
 
                                    $con = new Mysqli($serve,$user,$password,$db);
-
+                                   $con->query("SET NAMES utf8");
 
 
                                    $sql="select geocountries.CountryName,geocountries.ISO from geocountries";

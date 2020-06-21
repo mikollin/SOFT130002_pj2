@@ -85,6 +85,7 @@ if(isset($_SESSION['username'])){
 
 
                 $con = new Mysqli($serve,$user,$password,$db);
+            $con->query("SET NAMES utf8");
 
             $sql="select * from traveluser where username='$username'";
             $result=$con->query($sql);

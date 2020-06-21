@@ -86,6 +86,7 @@ $serve = 'localhost:3306';
 
 $username=$_SESSION['username'];
 $con = new Mysqli($serve, $user, $password, $db);
+$con->query("SET NAMES utf8");
 
 $path = $_GET['path'];
 $sql="select * from travelimage where path='$path'";

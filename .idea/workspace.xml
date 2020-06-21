@@ -21,6 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c45c732c-970c-4c40-a2bd-ad9ada8ca831" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/myfavor.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/myfavor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mypics.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/mypics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/upload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +67,8 @@
       <option name="presentableId" value="Default" />
       <updated>1592724875981</updated>
       <workItem from="1592724882675" duration="154000" />
+      <workItem from="1592725544619" duration="485000" />
+      <workItem from="1592726982908" duration="525000" />
     </task>
     <servers />
   </component>
@@ -87,9 +93,10 @@
     </state>
     <state x="224" y="36" key="#SSH_Configurations/0.23.1280.722@0.23.1280.722" timestamp="1592702207089" />
     <state x="224" y="36" key="#SSH_Configurations/0.23.1280.729@0.23.1280.729" timestamp="1592667222041" />
-    <state x="100" y="123" width="1080" height="517" key="DiffContextDialog" timestamp="1592709806845">
-      <screen x="0" y="23" width="1280" height="725" />
+    <state x="100" y="122" width="1080" height="511" key="DiffContextDialog" timestamp="1592726207891">
+      <screen x="0" y="23" width="1280" height="717" />
     </state>
+    <state x="100" y="122" width="1080" height="511" key="DiffContextDialog/0.23.1280.717@0.23.1280.717" timestamp="1592726207891" />
     <state x="100" y="123" width="1080" height="517" key="DiffContextDialog/0.23.1280.725@0.23.1280.725" timestamp="1592709806845" />
     <state x="332" y="23" width="919" height="703" key="dock-window-1" timestamp="1592283256758">
       <screen x="0" y="23" width="1280" height="724" />

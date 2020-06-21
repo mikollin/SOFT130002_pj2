@@ -12,7 +12,7 @@
 
 设置travelimge的imageid为自增，增加了country和city（一开始用到），设置path为unique。
 
-## √ 基本功能
+## √ 项目完成情况
 
 ### 1、非登陆能访问的页面
 
@@ -2261,4 +2261,14 @@ mysql5.7版本，默认root禁止通过phpmyadmin使用密码登录的。
 6、如果想每次保存都上传到服务器中的画，请勾选Tools->Deployment->Atuomatic upload(alway)
 7、可以通过Tools->Deployment下的Upload和Download上传和下载项目。
 （以上的原文链接：https://blog.csdn.net/qq_33172274/article/details/83721596 ）
+
+
+
+## √ 个人心得小节
+
+本次pj2个人感觉难度还是非常大的，但是能够完整的做完一个功能齐全的网页并且部署在自己的域名上还是很有成就感的，同时也对于php和js，ajax和mysql，session和cookie有了更加深入的了解和应用，综合运用课上学习的知识和lab中铺垫的技能，同时在完成整个项目过程中增强了代码能力和调试能力。然后作为bonus的部署也是真的很要人命，但是部署完感觉也算是在互联网上留下了痕迹了！
+
+就这门课程而言，感觉还是蛮有挑战的orz，lab和pj之间还是很紧凑的，但是能帮助我们有大致必需的web技能！
+
+最后再一次感谢我们的所有助教和朱老师的耐心解答！！！
 
